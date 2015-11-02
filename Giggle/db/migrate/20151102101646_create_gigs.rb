@@ -3,8 +3,8 @@ class CreateGigs < ActiveRecord::Migration
     create_table :gigs do |t|
       t.string :name
       t.string :price
-      t.text :photoUrl
-      t.string :startTime
+      t.text :photo_url
+      t.string :start_time
 
       t.timestamps null: false
     end

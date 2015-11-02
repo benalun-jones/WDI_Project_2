@@ -3,6 +3,12 @@ class GigsController < ApplicationController
 
   # GET /gigs
   # GET /gigs.json
+
+  def index
+    @q = Gig.ransack(params[:q])
+    @gigs = @q.result(distinct: true)
+  end
+
   def index
     @gigs = Gig.all
   end
@@ -69,6 +75,6 @@ class GigsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gig_params
-      params.require(:gig).permit(:name, :price, :photoUrl, :startTime)
+      params.require(:gig).permit(:name, :price, :photo_url, :start_time)
     end
 end

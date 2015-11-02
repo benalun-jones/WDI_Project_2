@@ -18,7 +18,7 @@ class GigsControllerTest < ActionController::TestCase
 
   test "should create gig" do
     assert_difference('Gig.count') do
-      post :create, gig: { name: @gig.name, photoUrl: @gig.photoUrl, price: @gig.price, startTime: @gig.startTime }
+      post :create, gig: { name: @gig.name, photo_url: @gig.photo_url, price: @gig.price, start_time: @gig.start_t ime }
     end
 
     assert_redirected_to gig_path(assigns(:gig))
@@ -35,7 +35,7 @@ class GigsControllerTest < ActionController::TestCase
   end
 
   test "should update gig" do
-    patch :update, id: @gig, gig: { name: @gig.name, photoUrl: @gig.photoUrl, price: @gig.price, startTime: @gig.startTime }
+    patch :update, id: @gig, gig: { name: @gig.name, photo_url: @gig.photo_url, price: @gig.price, start_time: @gig.start_time }
     assert_redirected_to gig_path(assigns(:gig))
   end
 

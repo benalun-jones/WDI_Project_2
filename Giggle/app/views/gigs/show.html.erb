@@ -12,12 +12,12 @@
 
 <p>
   <strong>Photourl:</strong>
-  <%= @gig.photoUrl %>
+  <%= image_tag @gig.photo_url, :width => 200, :height => 250 %>
 </p>
 
 <p>
   <strong>Starttime:</strong>
-  <%= @gig.startTime %>
+  <%= @gig.start_time %>
 </p>
 
 <%= link_to 'Edit', edit_gig_path(@gig) %> |

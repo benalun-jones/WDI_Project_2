@@ -1,1 +1,1 @@
-json.extract! @gig, :id, :name, :price, :photoUrl, :startTime, :created_at, :updated_at
+json.extract! @gig, :id, :name, :price, :photo_url, :start_time, :created_at, :updated_at

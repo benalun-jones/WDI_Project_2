@@ -3,6 +3,8 @@
 <h1>Listing Gigs</h1>
 
 <table>
+
+
   <thead>
     <tr>
       <th>Name</th>
@@ -18,8 +20,8 @@
       <tr>
         <td><%= gig.name %></td>
         <td><%= gig.price %></td>
-        <td><%= gig.photoUrl %></td>
-        <td><%= gig.startTime %></td>
+        <td><%= gig.photo_url %></td>
+        <td><%= gig.start_time %></td>
         <td><%= link_to 'Show', gig %></td>
         <td><%= link_to 'Edit', edit_gig_path(gig) %></td>
         <td><%= link_to 'Destroy', gig, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,4 +1,4 @@
 json.array!(@locations) do |location|
-  json.extract! location, :id, :streetAddress, :postcodeAddress
+  json.extract! location, :id, :street_address, :postcode_address
   json.url location_url(location, format: :json)
 end
