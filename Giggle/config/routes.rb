@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "users#index"
+  root "static_pages#home"
+  
   devise_for :users
   resources :locations
   resources :artists

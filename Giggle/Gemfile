@@ -25,6 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem 'foundation-rails'
+
+gem 'ransack'
+
 # gem 'ransack'
 
 # Use ActiveModel has_secure_password

@@ -11,13 +11,23 @@
 </p>
 
 <p>
-  <strong>Photourl:</strong>
+  <strong>Photo:</strong>
   <%= image_tag @gig.photo_url, :width => 200, :height => 250 %>
 </p>
 
 <p>
   <strong>Starttime:</strong>
   <%= @gig.start_time %>
+</p>
+
+<p>
+  <strong>Street Address:</strong>
+  <%= @gig.location.street_address %>
+</p>
+
+<p>
+  <strong>Postcode Address:</strong>
+  <%= @gig.location.postcode_address %>
 </p>
 
 <%= link_to 'Edit', edit_gig_path(@gig) %> |

@@ -21,13 +21,21 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :photo_url %><br>
+    <%= f.label :photo %><br>
     <%= f.text_area :photo_url %>
   </div>
   <div class="field">
     <%= f.label :start_time %><br>
     <%= f.text_field :start_time %>
   </div>
+  <div class="field">
+    <%= label_tag "Street address" %><br>
+    <%= text_field_tag "location[street_address]" %>
+  </div>
+  <div class="field">
+      <%= label_tag "Postcode address" %><br>
+      <%= text_field_tag "location[postcode_address]" %>
+    </div>
 
   <div class="actions">
     <%= f.submit %>

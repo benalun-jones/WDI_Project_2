@@ -2,29 +2,44 @@
 
 <h1>Listing Gigs</h1>
 
+  <%= form_tag gigs_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search]%>
+  <%= submit_tag "Search" %>
+  <% end %>
+
+
 <table>
 
 
   <thead>
+
     <tr>
-      <th>Name</th>
-      <th>Price</th>
       <th>Photourl</th>
-      <th>Starttime</th>
+      <th>Price</th>
+      <th>Name</th>
+      <th>Start Time</th>
+      <th>Street Address</th>
+      <th>Postcode Address</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @gigs.each do |gig| %>
+      <%= gig.location.postcode_address %>
       <tr>
+        <td><%= image_tag gig.photo_url, :width => 200, :height => 250 %></td>
         <td><%= gig.name %></td>
         <td><%= gig.price %></td>
-        <td><%= gig.photo_url %></td>
         <td><%= gig.start_time %></td>
+        <td><%= gig.location.street_address %></td>
+        <td><%= gig.location.postcode_address %></td>
         <td><%= link_to 'Show', gig %></td>
+
+        <%if current_user == gig.user %>
         <td><%= link_to 'Edit', edit_gig_path(gig) %></td>
         <td><%= link_to 'Destroy', gig, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

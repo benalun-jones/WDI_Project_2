@@ -4,13 +4,16 @@ class GigsController < ApplicationController
   # GET /gigs
   # GET /gigs.json
 
-  def index
-    @q = Gig.ransack(params[:q])
-    @gigs = @q.result(distinct: true)
-  end
+  # def index
+  #   @giggles = Gig.where(["name LIKE ?","%#{params[:search]}%"])
+  # end
 
   def index
-    @gigs = Gig.all
+    if params.has_key?('search')
+      @gigs = Gig.joins(:location).where("name ILIKE ? OR postcode_address ILIKE ? OR street_address ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%",  "%#{params[:search]}%")
+    else
+      @gigs = Gig.all
+    end
   end
 
   # GET /gigs/1
@@ -31,7 +34,12 @@ class GigsController < ApplicationController
   # POST /gigs.json
   def create
     @gig = Gig.new(gig_params)
-
+    @gig.user = current_user
+    location = Location.find_or_create_by({
+      postcode_address: params[:location][:postcode_address],
+      street_address: params[:location][:street_address]
+    })
+    @gig.location = location
     respond_to do |format|
       if @gig.save
         format.html { redirect_to @gig, notice: 'Gig was successfully created.' }
