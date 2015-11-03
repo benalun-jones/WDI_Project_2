@@ -29,6 +29,8 @@ gem 'foundation-rails'
 
 gem 'ransack'
 
+gem 'carrierwave', '0.10.0'
+
 # gem 'ransack'
 
 # Use ActiveModel has_secure_password
