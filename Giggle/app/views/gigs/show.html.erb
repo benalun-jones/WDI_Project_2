@@ -30,5 +30,10 @@
   <%= @gig.location.postcode_address %>
 </p>
 
+<p>
+  <b>Image:</b>
+  <%= link_to image_tag(@gig.gig_image.url), @gig.gig_image.url %>
+</p>
+
 <%= link_to 'Edit', edit_gig_path(@gig) %> |
 <%= link_to 'Back', gigs_path %>

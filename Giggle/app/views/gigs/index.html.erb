@@ -29,6 +29,7 @@
       <%= gig.location.postcode_address %>
       <tr>
         <td><%= image_tag gig.photo_url, :width => 200, :height => 250 %></td>
+        <td><%= image_tag gig.gig_image.url %></td>
         <td><%= gig.name %></td>
         <td><%= gig.price %></td>
         <td><%= gig.start_time %></td>

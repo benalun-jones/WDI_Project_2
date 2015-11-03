@@ -21,8 +21,12 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :photo %><br>
+    <%= f.label :photo_url %><br>
     <%= f.text_area :photo_url %>
+  </div>
+  <div class="field">
+    <%= f.label :gig_image %><br />
+    <%= f.file_field :gig_image %>
   </div>
   <div class="field">
     <%= f.label :start_time %><br>
@@ -36,6 +40,11 @@
       <%= label_tag "Postcode address" %><br>
       <%= text_field_tag "location[postcode_address]" %>
     </div>
+
+    <div class="field">
+       <%= f.label :remote_gig_image_url %><br />
+      <%= f.text_field :remote_gig_image_url %>
+     </div>
 
   <div class="actions">
     <%= f.submit %>
