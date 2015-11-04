@@ -3,9 +3,21 @@
 <head>
 
 <h1>Welcome to Giggle</h1>
+<div id="checkout_button">
+<%= button_tag(:type => 'button') do %>
 <%= link_to 'Login', new_user_session_path %>
-<%= link_to 'Signup', new_user_registration_path %>
-<%= link_to 'Browse', gigs_path %>
+<% end %>
+</div>
+<div id="checkout_button">
+<%= button_tag(:type => 'button') do %>
+  <%= link_to 'Signup', new_user_registration_path %>
+<% end %>
+</div>
+<div id="checkout_button">
+<%= button_tag(:type => 'button') do %>
+  <% link_to 'Browse Gigs', gigs_path %>
+<% end %>
+</div>
   <title></title>
 </head>
 <body>
