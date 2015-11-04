@@ -34,6 +34,26 @@
   <b>Image:</b>
   <%= link_to image_tag(@gig.gig_image.url), @gig.gig_image.url %>
 </p>
+<p>
+<div id="map-canvas" style="width: 100px; height: 100px;">
+</div>
+</p>
+<script type="text/javascript">
+ function initialize() {
+   var myCenter = { lat: <%= @gig.location.latitude %>, lng: <%= @gig.location.longitude %>};
+   var mapOptions = {
+     center: myCenter,
+     zoom: 8
+   };
+   var map = new google.maps.Map(document.getElementById('map-canvas'),
+     mapOptions);
+   var marker = new google.maps.Marker({
+     position: myCenter,
+     map: map
+   });
+ }
+ google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 
 <%= link_to 'Edit', edit_gig_path(@gig) %> |
 <%= link_to 'Back', gigs_path %>

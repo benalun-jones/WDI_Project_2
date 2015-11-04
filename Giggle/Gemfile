@@ -33,6 +33,8 @@ gem 'carrierwave', '0.10.0'
 
 gem 'rmagick'
 
+gem 'geocoder'
+
 # gem 'ransack'
 
 # Use ActiveModel has_secure_password

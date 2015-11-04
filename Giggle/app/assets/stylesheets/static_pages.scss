@@ -2,7 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-image: url(http://www.themedwire.co.uk/wp-content/uploads/2013/09/crowd-image-large.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    z-index: -1;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-image: url(http://www.themedwire.co.uk/wp-content/uploads/2013/09/crowd-image-large.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+
+  &.static_pages {
+    &:before {
+      -webkit-filter: blur(5px);
+    }
+  }
+  
+}

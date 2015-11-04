@@ -33,8 +33,7 @@ class GigsController < ApplicationController
   # POST /gigs
   # POST /gigs.json
   def create
-    @gig = Gig.new(gig_params)
-    @gig.user = current_user
+    @gig = current_user.gigs.new(gig_params)
     location = Location.find_or_create_by({
       postcode_address: params[:location][:postcode_address],
       street_address: params[:location][:street_address]
@@ -54,6 +53,11 @@ class GigsController < ApplicationController
   # PATCH/PUT /gigs/1
   # PATCH/PUT /gigs/1.json
   def update
+    location = Location.find_or_create_by({
+      postcode_address: params[:location][:postcode_address],
+      street_address: params[:location][:street_address]
+    })
+    @gig.location = location
     respond_to do |format|
       if @gig.update(gig_params)
         format.html { redirect_to @gig, notice: 'Gig was successfully updated.' }
@@ -62,6 +66,7 @@ class GigsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @gig.errors, status: :unprocessable_entity }
       end
+
     end
   end
 
@@ -83,6 +88,6 @@ class GigsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gig_params
-      params.require(:gig).permit(:name, :price, :photo_url, :start_time, :gig_image_uploader, :remote_gig§§_image_url)
+      params.require(:gig).permit(:name, :price, :photo_url, :start_time, :gig_image_uploader, :remote_gig_image_url, :user_id, :location_id)
     end
 end

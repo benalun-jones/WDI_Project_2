@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103143826) do
+ActiveRecord::Schema.define(version: 20151104104203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,13 +33,21 @@ ActiveRecord::Schema.define(version: 20151103143826) do
     t.integer  "artist_id"
     t.integer  "location_id"
     t.string   "gig_image"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "user_id"
   end
+
+  add_index "gigs", ["user_id"], name: "index_gigs_on_user_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.text     "street_address"
     t.string   "postcode_address"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "street_address_2"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +71,5 @@ ActiveRecord::Schema.define(version: 20151103143826) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "gigs", "users"
 end
