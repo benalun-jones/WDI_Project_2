@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Gigs</h1>
-
+<%= link_to 'Home', root_path %>
 <%= form_tag gigs_path, :method => 'get' do %>
 <%= text_field_tag :search, params[:search]%>
 <%= submit_tag "Search" %>

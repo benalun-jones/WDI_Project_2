@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
+  color: #622C00;
+  text-align: center;
 
   &:before {
     content: ' ';
@@ -16,18 +18,36 @@ body {
     background-size: cover;
   }
 
-  &.static_pages {
-    &:before {
-      -webkit-filter: blur(5px);
-    }
-  }
+  // &.static_pages {
+  //   &:before {
+  //     -webkit-filter: blur(5px);
+  //   }
+  // }
   
 }
 
-#checkout_button {
-  background-color: #33FF00;
+.checkout_button {
+  background-color: #FFAE00;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
-    border: 5px solid #009900;
-    padding: 1px;
+    border: 5px solid #622C00;
+    padding: 5px;
+    width: 150px;
+    height:70px;
+}
+
+.buttons{
+  margin-top: 300px;
+  // position:absolute;
+  //     transition: .5s ease;
+  //     top: 50%;
+  //     left: 35%;
+}
+
+h1 {
+  color: #622C00;
+}
+
+a:visited {
+  color: #622C00;
 }

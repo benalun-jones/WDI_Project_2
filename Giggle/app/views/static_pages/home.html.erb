@@ -2,22 +2,18 @@
 <html>
 <head>
 
-<h1>Welcome to Giggle</h1>
-<div id="checkout_button">
-<%= button_tag(:type => 'button') do %>
-<%= link_to 'Login', new_user_session_path %>
-<% end %>
-</div>
-<div id="checkout_button">
-<%= button_tag(:type => 'button') do %>
-  <%= link_to 'Signup', new_user_registration_path %>
-<% end %>
-</div>
-<div id="checkout_button">
-<%= button_tag(:type => 'button') do %>
-  <% link_to 'Browse Gigs', gigs_path %>
-<% end %>
-</div>
+  <h1>Giggle</h1>
+  <div class = "buttons">
+    <%= button_tag(:type => 'button', :class => "checkout_button", :id => "button_2") do %>
+    <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+    <%= button_tag(:type => 'button', :class => "checkout_button", :id => "button_2") do %>
+    <%= link_to 'Signup', new_user_registration_path %>
+    <% end %>
+    <%= button_tag(:type => 'button', :class => "checkout_button", :id => "button_2") do %>
+    <% link_to 'Browse Gigs', gigs_path %>
+    <% end %>
+  </div>
   <title></title>
 </head>
 <body>
