@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi1hHCeRpJ5mCf-9wviYpsUXRYRZgk984"></script>
 
 </head>
@@ -12,12 +14,14 @@
 <% if params[:controller] != "static_pages" && params[:action] != "home" %>
 <header>
   <nav class="topbar">
-    <h1>GIGGLE</h1>
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Gigs", gigs_path %></li>
+  <%= image_tag 'ben_logo_new.png' %>
+    <h1>Giggle</h1>
+    <ul id="nav">
+      <li class="top"><%= link_to "Home", root_path %></li>
+      <li class="top"><%= link_to "Gigs", gigs_path %></li>
       <% if current_user %>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      <li class="top"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      
       <% else %>
       <li><%= link_to "Sign In", new_user_session_path %></li>
       <li><%= link_to "Register", new_user_registration_path %></li>

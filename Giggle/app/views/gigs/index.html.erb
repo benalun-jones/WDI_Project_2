@@ -1,14 +1,14 @@
-<div class="row">
+  <div class="row">
 
   <p id="notice"><%= notice %></p>
   <%= link_to 'New Gig', new_gig_path %>
-  <h1>Listing Gigs</h1>
+  <h1 class ="listing_gigs">Listing Gigs</h1>
   <%= form_tag gigs_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search], :placeholder => "Search Gigs"%>
   <%#= submit_tag "Search" %>
   <% end %>
 
-  <ul class=row>
+  <ul class="row">
     <% @gigs.each do |gig| %>
     <li class="song large-3 medium-4 columns">
       <ul class="tile">
@@ -16,6 +16,7 @@
         <div id="gig-content">
         <li id="artist_name"><%= gig.name %></li>
         <li><%= gig.location.street_address %></li>
+        <br>
         <li><%= link_to 'Show Me More', gig %></li>
         <%if current_user == gig.user %>
         <li><%= link_to 'Edit Gig', edit_gig_path(gig) %></li>
@@ -33,5 +34,4 @@
 
   <br>
 
-
-</div>
+  </div>

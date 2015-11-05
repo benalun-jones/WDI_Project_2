@@ -1,36 +1,40 @@
 ul, li {
   list-style: none; 
   padding: 2px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tile {
     position: relative;
     margin: 5px;
-    color: #333333;
+    color: #303030 ;
     // overflow: hidden;
-    background-color: #E2E2E2;
+    background-color: #F8F8F8;
     // border: 1px solid rgba(255, 255, 255, 0.3);
     // background-clip: padding-box;
-    height: 330px;
-    width: 230px;
-    border-radius: 20px;
+    // height: 340px;
+    // width: 230px;
+    border-radius: 5px;
+    border-color: 303030;
 
     .image {
       padding-top: 5px;
+      border-radius: 5px;
     }
 
     #artist_name {
+      font-family: 'Poppins', sans-serif;
       font-weight: bold;
       padding-top: 10px;
       padding-bottom: 30px;
     }
 
     #gig-content{
-      border-style: solid;
-      border-color: #808080;
-      border-radius: 25px;
-      min-height: 174px;
-      min-width: 174px;
+
+      min-height: 154px;
+      min-width: 154px;
+      margin-top: 25px;
+
   }
 }
 
@@ -46,5 +50,18 @@ ul, li {
   width: 350px;
   margin: 0 auto;
   border-radius: 20px;
+}
+
+  #search {
+    padding-top: 5px;
+    border-radius: 5px;
+}
+
+.listing_gigs {
+  color: #303030;
+}
+
+a {
+  color: white;
 }
 

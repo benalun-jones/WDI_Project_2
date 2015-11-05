@@ -88,6 +88,6 @@ class GigsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gig_params
-      params.require(:gig).permit(:name, :price, :photo_url, :start_time, :gig_image_uploader, :remote_gig_image_url, :user_id, :location_id)
+      params.require(:gig).permit(:name, :price, :photo_url, :start_time, :gig_image, :remote_gig_image_url, :user_id, :location_id)
     end
 end
