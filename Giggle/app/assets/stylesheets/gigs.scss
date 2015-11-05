@@ -17,7 +17,6 @@ ul, li {
 
     .image {
       padding-top: 5px;
-      padding-bottom: 50px;
     }
 
     #artist_name {
@@ -32,7 +31,6 @@ ul, li {
       border-radius: 25px;
       min-height: 174px;
       min-width: 174px;
-      padding-top: 5px;
   }
 }
 
@@ -42,6 +40,11 @@ ul, li {
  margin-right: auto;
 
 }
-body {
-  background-color: black
+
+#map-canvas {
+  height: 350px;
+  width: 350px;
+  margin: 0 auto;
+  border-radius: 20px;
 }
+
