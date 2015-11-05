@@ -6,14 +6,8 @@
 <%= image_tag 'ben_logo_new.png' %>
 <h1 class="home_giggle">Giggle</h1>
   <div class = "buttons">
-    <%= button_tag(:type => 'button', :class => "checkout_button", :id => "button_2") do %>
-    <%= link_to 'Login', new_user_session_path %>
-    <% end %>
-    <%= button_tag(:type => 'button', :class => "checkout_button", :id => "button_2") do %>
-    <%= link_to 'Signup', new_user_registration_path %>
-    <% end %>
-    <%= button_tag(:type => 'button', :class => "checkout_button", :id => "button_2") do %>
-    <% link_to 'Browse Gigs', gigs_path %>
-    <% end %>
+    <%= link_to 'Login', new_user_session_path, class: "button radius"%>
+    <%= link_to 'Signup', new_user_registration_path, class: "button radius"%>
+    <%= link_to 'Browse Gigs', gigs_path, class: "button radius"%>
   </div>
 </div>

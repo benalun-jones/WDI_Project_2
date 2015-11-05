@@ -437,7 +437,7 @@ $include-html-global-classes: $include-html-classes;
 // 05. Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
 // $button-tny: rem-calc(10);
@@ -616,6 +616,8 @@ $include-html-global-classes: $include-html-classes;
 // $dropdown-button-pip-size-lrg: $button-pip-lrg - rem-calc(6);
 // $dropdown-button-pip-opposite-lrg: $button-pip-lrg * 2.5;
 // $dropdown-button-pip-top-lrg: (-$button-pip-lrg / 2) + rem-calc(3);
+
+
 
 // 10. Flex Video
 // - - - - - - - - - - - - - - - - - - - - - - - - -
