@@ -19,16 +19,21 @@ body {
 //     font-weight: bold;
 // }
 
-.buttons{
+.buttons {
   width: 600px;
   margin: 0 auto;
   display: inline-block;
-  color: black;
+  color: white;
   padding-top: 50px;
   // position:absolute;
   //     transition: .5s ease;
   //     top: 50%;
   //     left: 35%;
+}
+
+button.radius {
+  background: red;
+  color: white;
 }
 
 h1 {
@@ -65,7 +70,7 @@ body {
 .home_giggle {
   font-size: 100px;
   font-family: 'Lobster', cursive;
-  color: #cc0000;
-  text-shadow: -1px 0 #333333, 0 1px #333333, 1px 0 #333333, 0 -1px #333333;
-  opacity: .8;
+  color: #A43D45;
+  text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+  // opacity: .95;
 }
