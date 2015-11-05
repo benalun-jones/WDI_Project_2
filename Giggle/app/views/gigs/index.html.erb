@@ -1,45 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<h1>Listing Gigs</h1>
-<%= link_to 'Home', root_path %>
-<%= form_tag gigs_path, :method => 'get' do %>
-<%= text_field_tag :search, params[:search]%>
-<%= submit_tag "Search" %>
-<% end %>
+  <p id="notice"><%= notice %></p>
+  <%= link_to 'New Gig', new_gig_path %>
+  <h1>Listing Gigs</h1>
+  <%= form_tag gigs_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], :placeholder => "Search Gigs"%>
+  <%#= submit_tag "Search" %>
+  <% end %>
 
-
-
-
-
-
-
-
-<ul class=row>
-  <% @gigs.each do |gig| %>
+  <ul class=row>
+    <% @gigs.each do |gig| %>
     <li class="song large-3 medium-4 columns">
       <ul class="tile">
-        <li><%= gig.location.postcode_address %></li>
-        <li><%= image_tag gig.photo_url, :width => 200, :height => 250 %></li>
-        <li><%= image_tag gig.gig_image.url %></li>
-        <li><%= gig.name %></li>
-        <li><%= gig.price %></li>
-        <li><%= gig.start_time %></li>
+        <li class="image"><%= image_tag gig.gig_image.url %></li>
+        <div id="gig-content">
+        <li id="artist_name"><%= gig.name %></li>
         <li><%= gig.location.street_address %></li>
-        <li><%= gig.location.postcode_address %></li>
-        <li><%= link_to 'Show', gig %></li>
+        <li><%= link_to 'Show Me More', gig %></li>
         <%if current_user == gig.user %>
-        <li><%= link_to 'Edit', edit_gig_path(gig) %></li>
-        <li><%= link_to 'Destroy', gig, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= link_to 'Edit Gig', edit_gig_path(gig) %></li>
+        <li><%= link_to 'Delete', gig, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </div>
         <% end %>
       </ul>
     </li>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
 
 
 
-<div id="map"></div>
+  <div id="map"></div>
 
-<br>
+  <br>
 
-<%= link_to 'New Gig', new_gig_path %>
+
+</div>
