@@ -9,11 +9,7 @@ class GigsController < ApplicationController
   # end
 
   def index
-    if params.has_key?('search')
-      @gigs = Gig.joins(:location).where("name ILIKE ? OR postcode_address ILIKE ? OR street_address ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%",  "%#{params[:search]}%")
-    else
-      @gigs = Gig.all
-    end
+    @gigs = Gig.search params[:search]
   end
 
   # GET /gigs/1
